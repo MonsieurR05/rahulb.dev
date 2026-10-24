@@ -30,6 +30,30 @@ export const projects = [
     solution:
       "A Flask backend fetches readings from the UAL IoT API, keeps the token server-side and groups data by sensor. A React dashboard maps each sensor to a company-style asset, charts it live with Recharts, and runs pluggable trading strategies that suggest BUY, SELL or HOLD.",
     tech: ["React", "Vite", "JavaScript", "Recharts", "Python", "Flask"],
+    contribution:
+      "I extended the Flask API with summary, latest-reading and per-sensor routes, built the developer CLI, refactored the trading signals into strategy classes, moved the API credentials out of the code, and wrote the project documentation.",
+    decisions: [
+      {
+        title: "Credentials out of the code",
+        detail:
+          "The API token and server address were hardcoded in the backend. I moved them into environment variables and made the server refuse to start if they're missing, so a misconfiguration fails loudly instead of silently returning no data.",
+      },
+      {
+        title: "Strategies behind one interface",
+        detail:
+          "Each trading signal is a class that extends a shared TradingStrategy base and implements generateSignal(). The dashboard runs every strategy the same way, so adding one doesn't touch the UI.",
+      },
+      {
+        title: "Fail fast on slow sensors",
+        detail:
+          "Requests to the sensor API time out after eight seconds, so one unresponsive sensor endpoint can't hang the whole dashboard.",
+      },
+      {
+        title: "Testable without the frontend",
+        detail:
+          "A small developer CLI calls each backend route from the terminal, which made the API quick to check while the dashboard was still changing.",
+      },
+    ],
     features: [
       "Flask API with health, summary, latest-reading and per-sensor routes",
       "Developer CLI for testing backend routes from the terminal",

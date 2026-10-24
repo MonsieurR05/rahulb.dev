@@ -73,11 +73,6 @@
     }
   }
 
-  .draw {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 0;
-  }
-
   .case-dialog,
   .palette-dialog {
     padding: 0;
@@ -118,14 +113,6 @@
     opacity: 0;
     transform: translateY(12px);
   }
-
-  .draw {
-    animation: draw 2.4s cubic-bezier(0.65, 0, 0.25, 1) 0.25s both;
-  }
-
-  .reveal:not(.in) .draw {
-    animation-play-state: paused;
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -148,12 +135,6 @@
   from {
     opacity: 0;
     transform: translateY(10px);
-  }
-}
-
-@keyframes draw {
-  from {
-    stroke-dashoffset: 1;
   }
 }
 

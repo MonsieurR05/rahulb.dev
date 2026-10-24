@@ -1,11 +1,9 @@
 import { contact, experience, profile, projects, skills } from "@/data/portfolio";
-import { tracePoints } from "@/lib/trace";
 import SectionHeading from "./SectionHeading";
-import { LondonClock, OpenProjectButton } from "./Widgets";
-import { ArrowRight } from "./Icons";
+import { LondonClock } from "./Widgets";
+import { ArrowRight, ArrowUpRight } from "./Icons";
 
 const education = experience.find((item) => item.type === "Education");
-const featured = projects[0];
 
 // Degree timeline, assuming a September start and June finish.
 const [startYear, endYear] = (education?.date.match(/\d{4}/g) ?? []).map(Number);
@@ -18,7 +16,18 @@ const degreeProgress = Math.min(
   )
 );
 
-const sparkline = tracePoints({ seed: 1.2, amplitude: 10, width: 280, base: 24, offset: 0 });
+// Skills that appear in a project's tech list count as shown, not just claimed.
+const usedInProjects = new Set(
+  projects.flatMap((project) => project.tech.map((tech) => tech.toLowerCase()))
+);
+
+const practices = [
+  "Small, focused commits in a type[area]: message format",
+  "Architecture, testing and design decisions written down as I go",
+  "Changes driven by user feedback, logged with what changed and why",
+];
+
+const practicesEvidence = "https://github.com/MonsieurR05/quantique-exchange/tree/main/docs";
 
 // Cells share hairline borders, so the grid reads as one table rather than floating cards.
 function Cell({ label, className = "", children }) {
@@ -81,35 +90,25 @@ export default function About() {
             </Cell>
           )}
 
-          {featured && (
-            <Cell label="Featured project" className="md:col-span-3">
-              <div className="mt-6 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-2xl font-semibold tracking-tight [font-stretch:110%]">
-                    {featured.title}
-                  </p>
-                  <p className="mt-1 font-mono text-xs text-muted">
-                    {featured.tech.slice(0, 3).join(" / ")}
-                  </p>
-                </div>
-                <span className="font-mono text-xs text-subtle">{featured.status}</span>
-              </div>
-              <svg viewBox="0 0 280 48" className="mt-6 h-auto w-full" aria-hidden>
-                <polyline
-                  className="draw"
-                  pathLength="1"
-                  points={sparkline}
-                  fill="none"
-                  stroke="var(--fg)"
-                  strokeOpacity="0.8"
-                  strokeWidth="1.25"
-                />
-              </svg>
-              <div className="mt-6">
-                <OpenProjectButton slug={featured.slug}>Read the case study</OpenProjectButton>
-              </div>
-            </Cell>
-          )}
+          <Cell label="How I work" className="md:col-span-3">
+            <ul className="mt-6 space-y-3">
+              {practices.map((practice) => (
+                <li key={practice} className="flex gap-3 text-sm leading-relaxed text-fg/85">
+                  <span className="mt-2.5 h-px w-3 shrink-0 bg-subtle" />
+                  {practice}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={practicesEvidence}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-auto inline-flex w-fit items-center gap-1 pt-6 text-sm text-muted transition-colors hover:text-fg"
+            >
+              See the Quantique Exchange docs
+              <ArrowUpRight className="size-3.5" />
+            </a>
+          </Cell>
 
           <Cell label="Availability" className="md:col-span-3">
             <p className="mt-6 text-lg leading-snug tracking-tight">{contact.availability}</p>
@@ -123,15 +122,29 @@ export default function About() {
           </Cell>
 
           <Cell label="Toolkit" className="md:col-span-6">
+            <p className="mt-2 text-sm text-muted">
+              Highlighted skills are the ones used in the projects above.
+            </p>
             <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {skills.map((group) => (
-                <div key={group.category}>
-                  <p className="text-sm font-medium">{group.category}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {group.items.join(", ")}
-                  </p>
-                </div>
-              ))}
+              {skills.map((group) => {
+                const used = group.items.filter((item) => usedInProjects.has(item.toLowerCase()));
+                const other = group.items.filter((item) => !usedInProjects.has(item.toLowerCase()));
+
+                return (
+                  <div key={group.category}>
+                    <p className="text-sm font-medium">{group.category}</p>
+                    {used.length > 0 && (
+                      <p className="mt-2 text-sm leading-relaxed text-fg">{used.join(", ")}</p>
+                    )}
+                    {other.length > 0 && (
+                      <p className="mt-1 text-sm leading-relaxed text-subtle">
+                        {used.length > 0 && "Also "}
+                        {other.join(", ")}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </Cell>
         </div>

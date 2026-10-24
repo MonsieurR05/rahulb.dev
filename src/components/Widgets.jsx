@@ -1,9 +1,8 @@
 "use client";
 
 import { useRef, useState, useSyncExternalStore } from "react";
-import { openProject } from "@/lib/events";
 import { useIsMac } from "@/lib/useIsMac";
-import { ArrowRight, Check, Copy } from "./Icons";
+import { Check, Copy } from "./Icons";
 
 const londonTime = new Intl.DateTimeFormat("en-GB", {
   timeZone: "Europe/London",
@@ -32,19 +31,6 @@ export function LondonClock() {
       <time className="font-mono text-5xl tabular-nums tracking-tight">{time}</time>
       <span className="font-mono text-xs text-subtle">{zone}</span>
     </p>
-  );
-}
-
-export function OpenProjectButton({ slug, children }) {
-  return (
-    <button
-      type="button"
-      onClick={() => openProject(slug)}
-      className="group inline-flex items-center gap-2 text-sm font-medium underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-fg"
-    >
-      {children}
-      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-    </button>
   );
 }
 

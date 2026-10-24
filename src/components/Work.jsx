@@ -110,6 +110,13 @@ function ProjectCard({ project, index, onOpen }) {
         </h3>
         <p className="mt-4 max-w-lg leading-relaxed text-muted">{project.description}</p>
 
+        {project.contribution && (
+          <div className="mt-5 max-w-lg border-l-2 border-line-strong pl-4">
+            <p className="font-mono text-xs text-subtle">My part</p>
+            <p className="mt-1 text-sm leading-relaxed text-fg/85">{project.contribution}</p>
+          </div>
+        )}
+
         <div className="mt-6">
           <Tech tech={project.tech} />
         </div>
@@ -217,6 +224,25 @@ function CaseStudy({ project, onClose }) {
                 ))}
               </ul>
             </CaseSection>
+
+            {project.contribution && (
+              <CaseSection title="My part">
+                <p>{project.contribution}</p>
+              </CaseSection>
+            )}
+
+            {project.decisions && (
+              <CaseSection title="Engineering decisions">
+                <ul className="space-y-4">
+                  {project.decisions.map((decision) => (
+                    <li key={decision.title}>
+                      <p className="font-medium text-fg">{decision.title}</p>
+                      <p className="mt-1">{decision.detail}</p>
+                    </li>
+                  ))}
+                </ul>
+              </CaseSection>
+            )}
 
             <CaseSection title="Outcome">
               <p>{project.outcome}</p>
