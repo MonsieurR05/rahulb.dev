@@ -118,6 +118,8 @@ export const publications = [
       "Corey Ford",
     ],
     role: "Co-author",
+    contribution:
+      "I was involved across the whole project, from the background research to helping build the prototypes and collecting data.",
     venue: "Proceedings of the 2025 Conference on Creativity and Cognition",
     venueShort: "ACM C&C '25",
     publisher: "ACM",

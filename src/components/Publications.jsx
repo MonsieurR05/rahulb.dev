@@ -51,6 +51,13 @@ export default function Publications() {
                 </p>
                 <p className="mt-5 max-w-2xl leading-relaxed text-muted">{paper.summary}</p>
 
+                {paper.contribution && (
+                  <div className="mt-5 max-w-2xl border-l-2 border-line-strong pl-4">
+                    <p className="font-mono text-xs text-subtle">My part</p>
+                    <p className="mt-1 text-sm leading-relaxed text-fg/85">{paper.contribution}</p>
+                  </div>
+                )}
+
                 <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
                   <a
                     href={paper.links.paper}
