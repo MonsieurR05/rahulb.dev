@@ -20,7 +20,7 @@ const codeLines = [
     ["p", "],"],
   ],
   [["k", '  "published"'], ["p", ": "], ["s", "\"ACM C&C '25\""], ["p", ","]],
-  [["k", '  "open_to"'], ["p", ": "], ["s", '"internships"']],
+  [["k", '  "open_to"'], ["p", ": "], ["s", '"graduate roles"']],
   [["p", "}"]],
 ];
 
@@ -34,9 +34,9 @@ export default function Hero() {
   return (
     <section id="top" className="pb-20 pt-28 sm:pb-28 sm:pt-36">
       <div className="shell @container">
-        <p className="enter flex items-center gap-2.5 text-sm text-muted">
-          <span className="size-1.5 bg-fg" />
-          Open to internships and placements
+        <p className="enter flex items-start gap-2.5 text-sm text-muted">
+          <span className="mt-[7px] size-1.5 shrink-0 bg-fg" />
+          Open to graduate software engineering roles and internships
         </p>
 
         <h1

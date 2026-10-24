@@ -216,7 +216,7 @@ export const contact = {
   github: "https://github.com/MonsieurR05",
   website: "https://www.rahulb.dev/",
   availability:
-    "Open to software engineering internships, placement opportunities, and collaborative projects.",
+    "Open to graduate software engineering roles from 2027, internships and collaborative projects.",
   interests: [
     "Software engineering",
     "Full-stack development",
