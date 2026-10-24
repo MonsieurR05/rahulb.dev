@@ -6,10 +6,10 @@ import { useIsMac } from "@/lib/useIsMac";
 import { Search } from "./Icons";
 
 const links = [
-  { id: "projects", label: "Projects" },
-  { id: "publications", label: "Publications" },
   { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "publications", label: "Publications" },
 ];
 
 export default function Nav() {

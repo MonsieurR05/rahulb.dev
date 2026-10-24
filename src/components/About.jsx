@@ -45,7 +45,7 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
-        <SectionHeading index="03" title="About" meta="London, UK" />
+        <SectionHeading index="01" title="About" meta="London, UK" />
 
         <div className="mt-10 grid border-l border-t border-line sm:mt-14 md:grid-cols-6">
           <Cell label="What I do" className="md:col-span-4 md:row-span-2">
@@ -125,7 +125,7 @@ export default function About() {
 
           <Cell label="Toolkit" className="md:col-span-6">
             <p className="mt-2 text-sm text-muted">
-              Highlighted skills are the ones used in the projects above.
+              Highlighted skills are the ones used in the projects below.
             </p>
             <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {skills.map((group) => {

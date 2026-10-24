@@ -32,7 +32,7 @@ export default function Work() {
     <section id="projects" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
         <SectionHeading
-          index="01"
+          index="02"
           title="Projects"
           meta={`${projects.length} projects`}
           description="Full-stack and data-driven web projects, from a live IoT trading simulator to this site."

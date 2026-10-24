@@ -21,7 +21,7 @@ export default function Publications() {
     <section id="publications" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
         <SectionHeading
-          index="02"
+          index="04"
           title="Publications"
           meta={`${publications.length} paper${publications.length === 1 ? "" : "s"}`}
         />
