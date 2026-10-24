@@ -6,7 +6,7 @@ export const profile = {
   title: "Computer Science student and software developer",
   location: "United Kingdom",
   summary:
-    "I build full-stack software, interactive web experiences, and systems that combine technical functionality with clear user experience.",
+    "I build full-stack and data-driven software, from a React and Flask trading simulator on live IoT data to research published at ACM Creativity and Cognition.",
   focusAreas: [
     "Full-stack web development",
     "Interactive portfolio systems",

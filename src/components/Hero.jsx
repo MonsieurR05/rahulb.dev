@@ -53,7 +53,7 @@ export default function Hero() {
         >
           <div>
             <p className="text-xl font-medium tracking-tight sm:text-2xl">
-              {profile.title}, based in London.
+              Final-year Computer Science student at UAL, graduating 2027.
             </p>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
               {profile.summary}
