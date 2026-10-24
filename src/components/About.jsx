@@ -17,8 +17,10 @@ const degreeProgress = Math.min(
 );
 
 // Skills that appear in a project's tech list count as shown, not just claimed.
+// Names are compared without spaces or case, so "TailwindCSS" matches "Tailwind CSS".
+const normalise = (name) => name.toLowerCase().replace(/\s+/g, "");
 const usedInProjects = new Set(
-  projects.flatMap((project) => project.tech.map((tech) => tech.toLowerCase()))
+  projects.flatMap((project) => project.tech.map(normalise))
 );
 
 const practices = [
@@ -125,10 +127,10 @@ export default function About() {
             <p className="mt-2 text-sm text-muted">
               Highlighted skills are the ones used in the projects above.
             </p>
-            <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {skills.map((group) => {
-                const used = group.items.filter((item) => usedInProjects.has(item.toLowerCase()));
-                const other = group.items.filter((item) => !usedInProjects.has(item.toLowerCase()));
+                const used = group.items.filter((item) => usedInProjects.has(normalise(item)));
+                const other = group.items.filter((item) => !usedInProjects.has(normalise(item)));
 
                 return (
                   <div key={group.category}>

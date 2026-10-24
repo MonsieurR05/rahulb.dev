@@ -135,20 +135,46 @@ export const publications = [
 
 export const skills = [
   {
-    category: "Frontend",
-    items: ["JavaScript", "React", "Next.js", "Astro", "HTML", "CSS", "Tailwind CSS"],
+    category: "Languages",
+    items: ["Python", "JavaScript", "TypeScript", "C#", "C++", "SQL", "HTML", "CSS"],
   },
   {
-    category: "Backend",
-    items: ["Rust", "Python", "Flask", "Node.js", "REST APIs", "SQLite", "SQL"],
+    category: "AI/ML and LLMs",
+    items: [
+      "Anthropic API",
+      "OpenAI API",
+      "Prompt engineering",
+      "LLM agents",
+      "CLI automation",
+      "Local models (Ollama)",
+      "GitHub Copilot",
+      "Structured/JSON outputs",
+      "Tool and web-search integration",
+    ],
   },
   {
-    category: "Tools",
-    items: ["Git", "GitHub", "VS Code", "Vite", "Agile workflows"],
+    category: "Frameworks and libraries",
+    items: ["React", "Next.js", "FastAPI", "Flask", "Node.js", "Three.js", "Plotly", "Altair", "Tailwind CSS"],
   },
   {
-    category: "Creative / UX",
-    items: ["UI design", "HCI", "Accessibility", "Interactive systems", "Creative computing"],
+    category: "Tools and platforms",
+    items: ["Git", "GitHub", "REST APIs", "SQLite", "MySQL", "MongoDB", "Marimo", "Arduino", "NodeMCU", "Figma"],
+  },
+  {
+    category: "Concepts",
+    items: [
+      "Software development lifecycle",
+      "Testing and validation",
+      "Data analysis",
+      "Time series analysis",
+      "Algorithms",
+      "Data structures",
+      "OOP",
+      "Real-time systems",
+      "IoT",
+      "Data visualisation",
+      "HCI",
+    ],
   },
 ];
 
