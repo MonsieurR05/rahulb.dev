@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
-        <SectionHeading index="02" title="About" meta="London, UK" />
+        <SectionHeading index="03" title="About" meta="London, UK" />
 
         <div className="mt-10 grid border-l border-t border-line sm:mt-14 md:grid-cols-6">
           <Cell label="What I do" className="md:col-span-4 md:row-span-2">

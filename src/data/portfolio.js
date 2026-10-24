@@ -82,6 +82,33 @@ export const projects = [
   },
 ];
 
+export const publications = [
+  {
+    title: "Decolonizing Computer Science: The Immersive Elevator Experience",
+    authors: [
+      "Nishit Joshi",
+      "Rahul Bagga",
+      "Rhett Clayton",
+      "Majeed Adan",
+      "Jonathan Kalule",
+      "Corey Ford",
+    ],
+    role: "Co-author",
+    venue: "Proceedings of the 2025 Conference on Creativity and Cognition",
+    venueShort: "ACM C&C '25",
+    publisher: "ACM",
+    year: "2025",
+    pages: "512–516",
+    doi: "10.1145/3698061.3733978",
+    summary:
+      "A speculative design for an interactive installation inside an elevator. It shows people how the way wealthier countries use and throw away technology is linked to the exploitation of people in poorer regions, refined through an iterative design process with feedback from lecturers and peers.",
+    links: {
+      paper: "https://doi.org/10.1145/3698061.3733978",
+      pdf: "https://dl.acm.org/doi/pdf/10.1145/3698061.3733978",
+    },
+  },
+];
+
 export const skills = [
   {
     category: "Frontend",

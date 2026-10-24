@@ -7,6 +7,7 @@ import { Search } from "./Icons";
 
 const links = [
   { id: "work", label: "Work" },
+  { id: "publications", label: "Publications" },
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
 ];

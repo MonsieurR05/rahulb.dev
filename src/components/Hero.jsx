@@ -19,6 +19,7 @@ const codeLines = [
     ["s", '"Python"'],
     ["p", "],"],
   ],
+  [["k", '  "published"'], ["p", ": "], ["s", "\"ACM C&C '25\""], ["p", ","]],
   [["k", '  "open_to"'], ["p", ": "], ["s", '"internships"']],
   [["p", "}"]],
 ];

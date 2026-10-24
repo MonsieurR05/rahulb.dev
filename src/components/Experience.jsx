@@ -5,7 +5,7 @@ export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
-        <SectionHeading index="03" title="Experience" meta="education and work" />
+        <SectionHeading index="04" title="Experience" meta="education and work" />
 
         <ol className="mt-6 sm:mt-10">
           {experience.map((item, index) => (

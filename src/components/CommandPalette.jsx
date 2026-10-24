@@ -1,9 +1,9 @@
 "use client";
 
 import { Fragment, useEffect, useEffectEvent, useMemo, useRef, useState } from "react";
-import { contact, projects } from "@/data/portfolio";
+import { contact, projects, publications } from "@/data/portfolio";
 import { openProject } from "@/lib/events";
-import { Copy, Folder, GitHub, Hash, Mail, Search } from "./Icons";
+import { ArrowUpRight, Copy, Folder, GitHub, Hash, Mail, Search } from "./Icons";
 
 function scrollToSection(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -11,9 +11,18 @@ function scrollToSection(id) {
 
 const commands = [
   { id: "work", group: "Navigate", label: "Work", hint: "Selected projects", icon: Hash, run: () => scrollToSection("work") },
+  { id: "publications", group: "Navigate", label: "Publications", hint: "Research papers", icon: Hash, run: () => scrollToSection("publications") },
   { id: "about", group: "Navigate", label: "About", hint: "Focus, education, toolkit", icon: Hash, run: () => scrollToSection("about") },
   { id: "experience", group: "Navigate", label: "Experience", hint: "Education and work", icon: Hash, run: () => scrollToSection("experience") },
   { id: "contact", group: "Navigate", label: "Contact", hint: "Get in touch", icon: Hash, run: () => scrollToSection("contact") },
+  ...publications.map((paper) => ({
+    id: `paper-${paper.doi}`,
+    group: "Publications",
+    label: paper.title,
+    hint: paper.venueShort,
+    icon: ArrowUpRight,
+    run: () => window.open(paper.links.paper, "_blank", "noopener,noreferrer"),
+  })),
   ...projects.map((project) => ({
     id: `project-${project.slug}`,
     group: "Projects",

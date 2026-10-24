@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-20 pt-20 sm:pt-28">
       <div className="shell @container">
-        <SectionHeading index="04" title="Contact" />
+        <SectionHeading index="05" title="Contact" />
 
         <div className="reveal mt-10 sm:mt-14">
           <a
