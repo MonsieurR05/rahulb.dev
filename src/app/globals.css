@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0b0a;
+  --surface: #111110;
+  --raised: #181816;
+  --line: #262624;
+  --line-strong: #383835;
+  --fg: #ecebe6;
+  --muted: #a6a59e;
+  --subtle: #807f79;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--bg);
+    scrollbar-color: var(--line-strong) transparent;
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--fg);
+    color: var(--bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 72rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (width >= 40rem) {
+    .shell {
+      padding-inline: 2rem;
+    }
+  }
+
+  .draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .case-dialog,
+  .palette-dialog {
+    padding: 0;
+    color: var(--fg);
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+  }
+
+  .case-dialog {
+    margin: auto;
+    width: min(100% - 1.5rem, 56rem);
+    max-height: min(90dvh, 960px);
+    background: var(--surface);
+  }
+
+  .palette-dialog {
+    margin: 12vh auto auto;
+    width: min(100% - 1.5rem, 40rem);
+    background: var(--surface);
+  }
+
+  .case-dialog::backdrop,
+  .palette-dialog::backdrop {
+    background: rgb(0 0 0 / 0.75);
+  }
+}
+
+/* Scroll reveal: hidden only when JS can reveal it again. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    transition:
+      opacity 0.6s var(--ease-out),
+      transform 0.6s var(--ease-out);
+  }
+
+  .reveal:not(.in) {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .draw {
+    animation: draw 2.4s cubic-bezier(0.65, 0, 0.25, 1) 0.25s both;
+  }
+
+  .reveal:not(.in) .draw {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation: enter 0.7s var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  .case-dialog[open],
+  .palette-dialog[open] {
+    animation: pop 0.2s var(--ease-out);
+  }
+
+  .toast {
+    animation: pop 0.2s var(--ease-out) both;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
 }

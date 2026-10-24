@@ -1,3 +1,6 @@
+import quantiqueShot from "@/assets/projects/quantique-exchange.png";
+import portfolioShot from "@/assets/projects/portfolio.png";
+
 export const profile = {
   name: "Rahul Bagga",
   title: "Computer Science student and software developer",
@@ -7,7 +10,6 @@ export const profile = {
   focusAreas: [
     "Full-stack web development",
     "Interactive portfolio systems",
-    "AI-powered user experiences",
     "Backend APIs",
     "Creative computing",
   ],
@@ -15,83 +17,67 @@ export const profile = {
 
 export const projects = [
   {
-    title: "RahulOS",
-    type: "Personal portfolio system",
+    slug: "quantique-exchange",
+    title: "Quantique Exchange",
+    type: "IoT trading simulation",
+    role: "Backend and architecture developer, team of two",
+    status: "Completed",
+    timeline: "2026",
+    description:
+      "A university team project that turns live IoT sensor data from around UAL into a stock-market-style trading simulator, with live charts, strategy signals and simulated buy and sell actions.",
+    problem:
+      "Raw readings from door, motion, soil moisture, temperature and leak sensors are hard to engage with as plain numbers, and the UAL sensor API needs a token that can't be exposed in the browser.",
+    solution:
+      "A Flask backend fetches readings from the UAL IoT API, keeps the token server-side and groups data by sensor. A React dashboard maps each sensor to a company-style asset, charts it live with Recharts, and runs pluggable trading strategies that suggest BUY, SELL or HOLD.",
+    tech: ["React", "Vite", "JavaScript", "Recharts", "Python", "Flask"],
+    features: [
+      "Flask API with health, summary, latest-reading and per-sensor routes",
+      "Developer CLI for testing backend routes from the terminal",
+      "Momentum, moving-average and order-flow strategies built on a shared base class",
+      "Live chart with refresh status and last-updated time",
+      "Company-style asset names that keep the real sensor ID visible",
+      "Beginner tutorial overlay and simulated portfolio",
+    ],
+    outcome:
+      "A working prototype shaped by user feedback, with documented architecture, testing and design decisions. I built the backend routes and CLI, the strategy architecture and the project documentation; my teammate led the Bloomberg-style dashboard design and trading interactions.",
+    links: {
+      github: "https://github.com/MonsieurR05/quantique-exchange",
+      live: "https://monsieurr05.github.io/quantique-exchange/",
+    },
+    image: {
+      src: quantiqueShot,
+      alt: "Quantique Exchange in demo mode: the market watchlist, a live NVIDIA chart and the trading panel",
+    },
+  },
+  {
+    slug: "portfolio",
+    title: "rahulb.dev",
+    type: "Personal portfolio",
     role: "Designer / Developer",
     status: "In development",
     timeline: "2026",
     description:
-      "An OS-inspired personal portfolio interface where visitors can explore my projects, skills, experience, and background through interactive app windows.",
+      "This website: a fast, minimal portfolio with project case studies, a command menu and a fully responsive layout.",
     problem:
-      "Most personal portfolios are static and page-based, which makes it harder to show personality, interaction design, and technical thinking.",
+      "Many personal portfolios are hard to scan, so recruiters have to dig for the details they care about.",
     solution:
-      "RahulOS presents portfolio content as a lightweight operating-system environment, with apps for projects, skills, experience, contact, and a planned AI assistant.",
+      "This site presents my work as a single dark, minimal page built with Next.js and Tailwind CSS, with project case studies in dialogs, a ⌘K command menu for quick navigation, and all content driven from one data file.",
     tech: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
     features: [
-      "Boot-to-desktop portfolio experience",
-      "Window-based app interface",
+      "Project case studies in accessible dialogs",
+      "Command menu (⌘K) navigation",
       "Portfolio content stored as reusable data",
-      "Planned AI assistant for portfolio Q&A",
+      "Scroll-reveal motion that respects reduced-motion settings",
+      "Responsive layout from phone to desktop",
     ],
     outcome:
-      "The project is currently building toward a more immersive and adaptive portfolio experience that can later support AI-powered visitor guidance.",
+      "A portfolio that is quick to scan and easy to navigate, and a showcase of front-end craft and attention to detail.",
     links: {
-      github: "Add GitHub link later",
-      live: "Add live link later",
+      github: "https://github.com/MonsieurR05/rahul-os",
     },
-  },
-  {
-    title: "SectorFlow",
-    type: "Motorsport telemetry platform",
-    role: "Backend developer",
-    status: "In development",
-    timeline: "2026",
-    description:
-      "A motorsport telemetry analysis platform with a Rust backend and JavaScript frontend for exploring driver, telemetry, and comparison data.",
-    problem:
-      "Raw motorsport data can be difficult to understand without clear API routes, comparison tools, and frontend visualisation.",
-    solution:
-      "SectorFlow is being developed as an API-first telemetry platform, starting with backend endpoints for health checks, driver lists, telemetry samples, and driver comparisons.",
-    tech: ["Rust", "JavaScript", "REST APIs", "Git"],
-    features: [
-      "Backend health endpoint",
-      "Driver list endpoint",
-      "Telemetry endpoint",
-      "Driver comparison endpoint",
-      "Professional Git branch workflow",
-    ],
-    outcome:
-      "The project currently demonstrates backend API structure, JSON responses, and a foundation for a future frontend telemetry dashboard.",
-    links: {
-      github: "Add GitHub link later",
-      live: "Not deployed yet",
-    },
-  },
-  {
-    title: "F1 Explorer",
-    type: "Full-stack data web app",
-    role: "Full-stack developer",
-    status: "Completed",
-    timeline: "2025",
-    description:
-      "A full-stack Formula 1 web application using a Flask API, SQLite database, and Astro/React frontend.",
-    problem:
-      "Formula 1 information is often spread across multiple sources, making it harder to explore drivers, teams, and race-related data in one place.",
-    solution:
-      "F1 Explorer combines a database-backed API with a frontend interface, allowing users to browse and explore Formula 1 data through a web application.",
-    tech: ["Python", "Flask", "SQLite", "Astro", "React", "Tailwind CSS"],
-    features: [
-      "SQLite-backed data model",
-      "Flask API with CORS",
-      "Astro and React frontend",
-      "Tailwind-based interface",
-      "Formula 1 data exploration",
-    ],
-    outcome:
-      "The project demonstrates full-stack development, API integration, database usage, and frontend interface design.",
-    links: {
-      github: "Add GitHub link later",
-      live: "Add live link later",
+    image: {
+      src: portfolioShot,
+      alt: "The rahulb.dev hero: Rahul Bagga's name, a short intro and a profile.json code card",
     },
   },
 ];
@@ -117,6 +103,7 @@ export const skills = [
 
 export const experience = [
   {
+    id: "ual",
     role: "BSc Computer Science Student",
     organisation: "University of the Arts London",
     date: "2024 – 2027",
@@ -131,6 +118,7 @@ export const experience = [
     ],
   },
   {
+    id: "medhurst",
     role: "IT / Technical Support Experience",
     organisation: "Medhurst Communications",
     date: "2022",
