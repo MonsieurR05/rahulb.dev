@@ -61,10 +61,10 @@ export default function Hero() {
 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
               <a
-                href="#work"
+                href="#projects"
                 className="group inline-flex h-11 items-center gap-2 rounded-sm bg-fg px-5 text-sm font-medium text-bg transition-colors hover:bg-white"
               >
-                View my work
+                View my projects
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a

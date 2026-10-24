@@ -6,7 +6,7 @@ import { useIsMac } from "@/lib/useIsMac";
 import { Search } from "./Icons";
 
 const links = [
-  { id: "work", label: "Work" },
+  { id: "projects", label: "Projects" },
   { id: "publications", label: "Publications" },
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },

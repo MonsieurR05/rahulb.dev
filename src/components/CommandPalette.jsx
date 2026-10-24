@@ -10,7 +10,7 @@ function scrollToSection(id) {
 }
 
 const commands = [
-  { id: "work", group: "Navigate", label: "Work", hint: "Selected projects", icon: Hash, run: () => scrollToSection("work") },
+  { id: "projects", group: "Navigate", label: "Projects", hint: "Selected projects", icon: Hash, run: () => scrollToSection("projects") },
   { id: "publications", group: "Navigate", label: "Publications", hint: "Research papers", icon: Hash, run: () => scrollToSection("publications") },
   { id: "about", group: "Navigate", label: "About", hint: "Focus, education, toolkit", icon: Hash, run: () => scrollToSection("about") },
   { id: "experience", group: "Navigate", label: "Experience", hint: "Education and work", icon: Hash, run: () => scrollToSection("experience") },

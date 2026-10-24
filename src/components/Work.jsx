@@ -29,11 +29,11 @@ export default function Work() {
   }, [project]);
 
   return (
-    <section id="work" className="scroll-mt-20 py-20 sm:py-28">
+    <section id="projects" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
         <SectionHeading
           index="01"
-          title="Selected work"
+          title="Projects"
           meta={`${projects.length} projects`}
           description="Full-stack and data-driven web projects, from a live IoT trading simulator to this site."
         />
