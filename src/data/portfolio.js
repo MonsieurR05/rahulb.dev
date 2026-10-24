@@ -73,7 +73,7 @@ export const projects = [
     outcome:
       "A portfolio that is quick to scan and easy to navigate, and a showcase of front-end craft and attention to detail.",
     links: {
-      github: "https://github.com/MonsieurR05/rahul-os",
+      github: "https://github.com/MonsieurR05/rahulb.dev",
     },
     image: {
       src: portfolioShot,
