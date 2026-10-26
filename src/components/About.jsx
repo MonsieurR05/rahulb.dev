@@ -1,7 +1,7 @@
 import { contact, experience, profile, projects, skills } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
 import { LondonClock } from "./Widgets";
-import { ArrowRight, ArrowUpRight } from "./Icons";
+import { ArrowRight } from "./Icons";
 
 const education = experience.find((item) => item.type === "Education");
 
@@ -23,13 +23,6 @@ const usedInProjects = new Set(
   projects.flatMap((project) => project.tech.map(normalise))
 );
 
-const practices = [
-  "Small, focused commits in a type[area]: message format",
-  "Architecture, testing and design decisions written down as I go",
-  "Changes driven by user feedback, logged with what changed and why",
-];
-
-const practicesEvidence = "https://github.com/MonsieurR05/quantique-exchange/tree/main/docs";
 
 // Cells share hairline borders, so the grid reads as one table rather than floating cards.
 function Cell({ label, className = "", children }) {
@@ -92,27 +85,7 @@ export default function About() {
             </Cell>
           )}
 
-          <Cell label="How I work" className="md:col-span-3">
-            <ul className="mt-6 space-y-3">
-              {practices.map((practice) => (
-                <li key={practice} className="flex gap-3 text-sm leading-relaxed text-fg/85">
-                  <span className="mt-2.5 h-px w-3 shrink-0 bg-subtle" />
-                  {practice}
-                </li>
-              ))}
-            </ul>
-            <a
-              href={practicesEvidence}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-auto inline-flex w-fit items-center gap-1 pt-6 text-sm text-muted transition-colors hover:text-fg"
-            >
-              See the Quantique Exchange docs
-              <ArrowUpRight className="size-3.5" />
-            </a>
-          </Cell>
-
-          <Cell label="Availability" className="md:col-span-3">
+          <Cell label="Availability" className="md:col-span-6">
             <p className="mt-6 text-lg leading-snug tracking-tight">{contact.availability}</p>
             <a
               href="#contact"

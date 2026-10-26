@@ -9,10 +9,10 @@ export const profile = {
   summary:
     "I build full-stack and data-driven software, from a React and Flask trading simulator on live IoT data to research published at ACM Creativity and Cognition.",
   focusAreas: [
-    "Full-stack web development",
-    "Interactive portfolio systems",
-    "Backend APIs",
-    "Creative computing",
+    "Full-stack development",
+    "AI and machine learning",
+    "Software engineering",
+    "Backend systems and APIs",
   ],
 };
 
