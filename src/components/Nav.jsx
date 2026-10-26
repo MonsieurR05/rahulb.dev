@@ -39,9 +39,8 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-bg">
       <nav aria-label="Primary" className="shell flex h-14 items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2.5 font-semibold tracking-tight [font-stretch:110%]">
-          <Image src={logo} alt="" priority className="h-4 w-auto" />
-          Rahul Bagga
+        <a href="#top" aria-label="Rahul Bagga, back to top" className="flex items-center">
+          <Image src={logo} alt="" priority className="h-5 w-auto" />
         </a>
 
         <ul className="hidden items-center gap-7 md:flex">
