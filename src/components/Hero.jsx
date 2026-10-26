@@ -8,7 +8,7 @@ const codeLines = [
   [["k", '  "role"'], ["p", ": "], ["s", '"Software Developer"'], ["p", ","]],
   [["k", '  "study"'], ["p", ": "], ["s", '"BSc CS, UAL"'], ["p", ","]],
   [["k", '  "based"'], ["p", ": "], ["s", '"London, UK"'], ["p", ","]],
-  [["k", '  "latest"'], ["p", ": "], ["s", '"Quantique Exchange"'], ["p", ","]],
+  [["k", '  "latest"'], ["p", ": "], ["s", '"F1 Neural Race Strategist"'], ["p", ","]],
   [
     ["k", '  "stack"'],
     ["p", ": ["],

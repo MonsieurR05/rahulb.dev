@@ -1,5 +1,6 @@
 import quantiqueShot from "@/assets/projects/quantique-exchange.png";
 import portfolioShot from "@/assets/projects/portfolio.png";
+import f1Shot from "@/assets/projects/f1-neural-strategist.png";
 
 export const profile = {
   name: "Rahul Bagga",
@@ -71,6 +72,60 @@ export const projects = [
     image: {
       src: quantiqueShot,
       alt: "Quantique Exchange in demo mode: the market watchlist, a live NVIDIA chart and the trading panel",
+    },
+  },
+  {
+    slug: "f1-neural-strategist",
+    title: "F1 Neural Race Strategist",
+    type: "ML race-strategy simulator",
+    role: "Solo project",
+    status: "In development",
+    timeline: "2026",
+    description:
+      "An interactive Formula 1 strategy simulator. A neural lap-time model trained on real timing data drives a Monte Carlo race simulator that ranks pit strategies and explains why one beats another.",
+    problem:
+      "Choosing a pit strategy means predicting how tyre wear, fuel, traffic and safety cars play out over a whole race, and a lap-time model is only useful for 'what if' questions if you can trust its counterfactuals.",
+    solution:
+      "A structured, probabilistic neural network predicts lap times from tyre compound and age, fuel load, temperature, traffic and pace. A lap-by-lap Monte Carlo simulator combines it with pit-loss, safety-car and overtaking models, and an optimiser ranks legal strategies by expected finishing position and risk. A FastAPI service on Fly.io powers a Next.js app with a race replay, strategy builder and optimiser.",
+    tech: ["Python", "PyTorch", "LightGBM", "FastAPI", "Next.js", "TypeScript", "D3", "FastF1"],
+    features: [
+      "Data pipeline for the 2021–2025 seasons, with a per-race Pirelli compound table",
+      "Probabilistic lap-time network benchmarked against three non-neural baselines",
+      "Monte Carlo race simulator with pit-loss, safety-car and overtaking models",
+      "Strategy optimiser that ranks plans by expected position and risk, with a time breakdown",
+      "In-race adaptation: a Gaussian process and a GRU update forecasts from the laps already run",
+      "Web app with a race replay, drag-and-drop strategy builder and optimiser",
+    ],
+    decisions: [
+      {
+        title: "Physically constrained predictions",
+        detail:
+          "The network can never predict a tyre getting faster as it ages, or a softer compound being slower when fresh. Those guarantees are what make its strategy counterfactuals trustworthy.",
+      },
+      {
+        title: "A sealed test season",
+        detail:
+          "All settings were fixed on 2021–2024, and the 2025 season was scored once at the end, so the headline results aren't tuned to the test data.",
+      },
+      {
+        title: "Honest comparisons",
+        detail:
+          "The network is compared with three non-neural baselines using race-level bootstrap intervals, and the reports say where it doesn't win, such as the one circuit it had never seen.",
+      },
+      {
+        title: "Cheap to run",
+        detail:
+          "The API runs on one small Fly.io machine that sleeps when idle, so the live app costs close to nothing to keep online.",
+      },
+    ],
+    outcome:
+      "On the sealed 2025 season (19,959 laps), the network had the lowest lap-time error of four models: 0.900 s against 0.986 s for LightGBM, and 0.491 s within a race. The weak spots are documented too: its 90% intervals cover 86% of laps, and the simulator's midfield positions are less accurate than a simple lap-1 baseline.",
+    links: {
+      live: "https://f1-neural-strategist.vercel.app/race/2024_01",
+    },
+    image: {
+      src: f1Shot,
+      alt: "F1 Neural Race Strategist showing a 2024 Bahrain Grand Prix replay and the strategy builder",
     },
   },
   {
