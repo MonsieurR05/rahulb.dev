@@ -131,6 +131,7 @@ export const projects = [
     outcome:
       "On the sealed 2025 season (19,959 laps), the network had the lowest lap-time error of four models: 0.900 s against 0.986 s for LightGBM, and 0.491 s within a race. The weak spots are documented too: its 90% intervals cover 86% of laps, and the simulator's midfield positions are less accurate than a simple lap-1 baseline.",
     links: {
+      github: "https://github.com/MonsieurR05/f1-neural-strategist",
       live: "https://f1-neural-strategist.vercel.app/race/2024_01",
     },
     image: {
@@ -299,13 +300,13 @@ export const experience = [
   },
   {
     id: "medhurst",
-    role: "IT / Technical Support Experience",
+    role: "IT Support / Hardware Technician",
     organisation: "Medhurst Communications",
-    date: "2022",
+    date: "2022 – 2024",
     type: "Work Experience",
     location: "UK",
     description:
-      "Built and configured PCs and laptops, installed operating systems and drivers, troubleshot hardware/software issues, and supported client deployments.",
+      "Three months full-time in summer 2022, then returned for a one-week college placement in each of the next two years. Built and configured PCs and laptops, installed operating systems and drivers, troubleshot hardware and software issues, and supported client deployments.",
     highlights: [
       "Configured devices for schools and business clients",
       "Installed operating systems, drivers, and software packages",
