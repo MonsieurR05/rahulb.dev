@@ -31,6 +31,10 @@ export const projects = [
     solution:
       "A Flask backend fetches readings from the UAL IoT API, keeps the token server-side and groups data by sensor. A React dashboard maps each sensor to a company-style asset, charts it live with Recharts, and runs pluggable trading strategies that suggest BUY, SELL or HOLD.",
     tech: ["React", "Vite", "JavaScript", "Recharts", "Python", "Flask"],
+    shows: [
+      "REST APIs", "Git", "GitHub", "IoT", "Real-time systems", "Data visualisation",
+      "OOP", "Testing and validation", "Software development lifecycle",
+    ],
     contribution:
       "I extended the Flask API with summary, latest-reading and per-sensor routes, built the developer CLI, refactored the trading signals into strategy classes, moved the API credentials out of the code, and wrote the project documentation.",
     decisions: [
@@ -88,6 +92,12 @@ export const projects = [
     solution:
       "A structured, probabilistic neural network predicts lap times from tyre compound and age, fuel load, temperature, traffic and pace. A lap-by-lap Monte Carlo simulator combines it with pit-loss, safety-car and overtaking models, and an optimiser ranks legal strategies by expected finishing position and risk. A FastAPI service on Fly.io powers a Next.js app with a race replay, strategy builder and optimiser.",
     tech: ["Python", "PyTorch", "LightGBM", "FastAPI", "Next.js", "TypeScript", "D3", "FastF1"],
+    shows: [
+      "React", "Tailwind CSS", "scikit-learn", "pandas", "NumPy", "SciPy", "REST APIs",
+      "pytest", "Docker", "Vercel", "Fly.io", "Git", "GitHub", "Machine learning",
+      "Monte Carlo simulation", "Time series analysis", "Data analysis", "Data visualisation",
+      "Testing and validation", "Algorithms",
+    ],
     features: [
       "Data pipeline for the 2021–2025 seasons, with a per-race Pirelli compound table",
       "Probabilistic lap-time network benchmarked against three non-neural baselines",
@@ -142,6 +152,7 @@ export const projects = [
     solution:
       "This site presents my work as a single dark, minimal page built with Next.js and Tailwind CSS, with project case studies in dialogs, a ⌘K command menu for quick navigation, and all content driven from one data file.",
     tech: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
+    shows: ["HTML", "CSS", "Vercel", "Git", "GitHub"],
     features: [
       "Project case studies in accessible dialogs",
       "Command menu (⌘K) navigation",
@@ -207,20 +218,55 @@ export const skills = [
       "GitHub Copilot",
       "Structured/JSON outputs",
       "Tool and web-search integration",
+      "PyTorch",
+      "LightGBM",
+      "scikit-learn",
     ],
   },
   {
     category: "Frameworks and libraries",
-    items: ["React", "Next.js", "FastAPI", "Flask", "Node.js", "Three.js", "Plotly", "Altair", "Tailwind CSS"],
+    items: [
+      "React",
+      "Next.js",
+      "FastAPI",
+      "Flask",
+      "Node.js",
+      "Three.js",
+      "pandas",
+      "NumPy",
+      "SciPy",
+      "D3",
+      "Recharts",
+      "Plotly",
+      "Altair",
+      "Tailwind CSS",
+    ],
   },
   {
     category: "Tools and platforms",
-    items: ["Git", "GitHub", "REST APIs", "SQLite", "MySQL", "MongoDB", "Marimo", "Arduino", "NodeMCU", "Figma"],
+    items: [
+      "Git",
+      "GitHub",
+      "REST APIs",
+      "pytest",
+      "Docker",
+      "Vercel",
+      "Fly.io",
+      "SQLite",
+      "MySQL",
+      "MongoDB",
+      "Marimo",
+      "Arduino",
+      "NodeMCU",
+      "Figma",
+    ],
   },
   {
     category: "Concepts",
     items: [
       "Software development lifecycle",
+      "Machine learning",
+      "Monte Carlo simulation",
       "Testing and validation",
       "Data analysis",
       "Time series analysis",

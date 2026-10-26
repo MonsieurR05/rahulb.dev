@@ -29,7 +29,7 @@ export default function OpengraphImage() {
           }}
         >
           <span>rahulb.dev</span>
-          <span>London, UK</span>
+          <span>Southampton, UK</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>

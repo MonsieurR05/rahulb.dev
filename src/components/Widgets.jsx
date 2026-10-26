@@ -22,7 +22,7 @@ function readClock() {
   return `${get("hour")}:${get("minute")} ${get("timeZoneName")}`;
 }
 
-export function LondonClock() {
+export function UKClock() {
   const value = useSyncExternalStore(subscribeToClock, readClock, () => null);
   const [time, zone] = value ? value.split(" ") : ["--:--", "GMT"];
 

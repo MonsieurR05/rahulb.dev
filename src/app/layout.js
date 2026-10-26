@@ -14,7 +14,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Rahul Bagga is a Computer Science student and software developer in London, building full-stack web apps with React, Next.js and Python.";
+  "Rahul Bagga is a Computer Science student and software developer in Southampton, building full-stack web apps with React, Next.js and Python.";
 
 export const metadata = {
   metadataBase: new URL("https://www.rahulb.dev"),

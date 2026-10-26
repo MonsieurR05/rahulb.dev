@@ -1,6 +1,6 @@
 import { contact, experience, profile, projects, skills } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
-import { LondonClock } from "./Widgets";
+import { UKClock } from "./Widgets";
 import { ArrowRight } from "./Icons";
 
 const education = experience.find((item) => item.type === "Education");
@@ -20,7 +20,7 @@ const degreeProgress = Math.min(
 // Names are compared without spaces or case, so "TailwindCSS" matches "Tailwind CSS".
 const normalise = (name) => name.toLowerCase().replace(/\s+/g, "");
 const usedInProjects = new Set(
-  projects.flatMap((project) => project.tech.map(normalise))
+  projects.flatMap((project) => [...project.tech, ...(project.shows ?? [])].map(normalise))
 );
 
 
@@ -38,7 +38,7 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-20 py-20 sm:py-28">
       <div className="shell">
-        <SectionHeading index="01" title="About" meta="London, UK" />
+        <SectionHeading index="01" title="About" meta="Southampton, UK" />
 
         <div className="mt-10 grid border-l border-t border-line sm:mt-14 md:grid-cols-6">
           <Cell label="What I do" className="md:col-span-4 md:row-span-2">
@@ -57,12 +57,12 @@ export default function About() {
             </ul>
           </Cell>
 
-          <Cell label="Local time, London" className="md:col-span-2">
+          <Cell label="Local time, UK" className="md:col-span-2">
             <div className="mt-6">
-              <LondonClock />
+              <UKClock />
             </div>
             <p className="mt-auto pt-6 text-sm text-muted">
-              Based in London, UK. Happy to work across time zones.
+              Based in Southampton, UK. Happy to work across time zones.
             </p>
           </Cell>
 

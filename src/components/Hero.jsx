@@ -7,18 +7,13 @@ const codeLines = [
   [["k", '  "name"'], ["p", ": "], ["s", `"${profile.name}"`], ["p", ","]],
   [["k", '  "role"'], ["p", ": "], ["s", '"Software Developer"'], ["p", ","]],
   [["k", '  "study"'], ["p", ": "], ["s", '"BSc CS, UAL"'], ["p", ","]],
-  [["k", '  "based"'], ["p", ": "], ["s", '"London, UK"'], ["p", ","]],
+  [["k", '  "based"'], ["p", ": "], ["s", '"Southampton, UK"'], ["p", ","]],
   [["k", '  "latest"'], ["p", ": "], ["s", '"F1 Neural Race Strategist"'], ["p", ","]],
-  [
-    ["k", '  "stack"'],
-    ["p", ": ["],
-    ["s", '"React"'],
-    ["p", ", "],
-    ["s", '"Next.js"'],
-    ["p", ", "],
-    ["s", '"Python"'],
-    ["p", "],"],
-  ],
+  [["k", '  "stack"'], ["p", ": {"]],
+  [["k", '    "web"'], ["p", ": ["], ["s", '"React"'], ["p", ", "], ["s", '"Next.js"'], ["p", ", "], ["s", '"TypeScript"'], ["p", "],"]],
+  [["k", '    "backend"'], ["p", ": ["], ["s", '"Python"'], ["p", ", "], ["s", '"FastAPI"'], ["p", ", "], ["s", '"Flask"'], ["p", "],"]],
+  [["k", '    "ml"'], ["p", ": ["], ["s", '"PyTorch"'], ["p", ", "], ["s", '"LightGBM"'], ["p", ", "], ["s", '"pandas"'], ["p", "]"]],
+  [["p", "  },"]],
   [["k", '  "published"'], ["p", ": "], ["s", "\"ACM C&C '25\""], ["p", ","]],
   [["k", '  "open_to"'], ["p", ": "], ["s", '"graduate roles"']],
   [["p", "}"]],
@@ -100,7 +95,7 @@ function CodeCard() {
         <span>json</span>
       </div>
 
-      <pre className="overflow-x-auto px-4 py-4 font-mono text-xs leading-6 sm:text-[13px] sm:leading-7">
+      <pre className="overflow-x-auto px-4 py-4 font-mono text-[11px] leading-6 sm:text-[13px] sm:leading-7">
         <code>
           {codeLines.map((tokens, line) => (
             <span key={line} className="flex">
