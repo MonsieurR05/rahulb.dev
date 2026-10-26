@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import logo from "@/assets/logo.png";
 import { openPalette } from "@/lib/events";
 import { useIsMac } from "@/lib/useIsMac";
 import { Search } from "./Icons";
@@ -37,7 +39,8 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-bg">
       <nav aria-label="Primary" className="shell flex h-14 items-center justify-between gap-4">
-        <a href="#top" className="font-semibold tracking-tight [font-stretch:110%]">
+        <a href="#top" className="flex items-center gap-2.5 font-semibold tracking-tight [font-stretch:110%]">
+          <Image src={logo} alt="" priority className="h-4 w-auto" />
           Rahul Bagga
         </a>
 
